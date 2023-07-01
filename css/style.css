@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .container {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .container:hover {
+    transform: scale(1.025);
+  }
+  
+  .heart {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: solid 2px red;
+    background: red;
+    border-top: none;
+    border-left: none;
+    animation-name: 'anime';
+    animation-duration: 300ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    -webkit-animation-name: 'anime';
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in;
+  }
+  
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: ' ';
+    -webkit-border-radius: 150px 0 0 150px;
+    -moz-border-radius: 150px 0 0 150px;
+    border-radius: 150px 0 0 150px;
+    width: 175px;
+    height: 250px;
+    border: solid 2px red;
+    background: red;
+    border-right: none;
+    left: -175px;
+  }
+  
+  .heart:after {
+    position: absolute;
+    left: 37.5px;
+    top: -212.5px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
